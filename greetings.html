@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>Greetings</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+#main__div {
+width: 100vw;
+height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+position: relative;
+overflow: hidden;
+}
+
+.follow__page {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    bottom: 50px;
+    right: -200px;
+    transition: 0.5s;
+}
+
+.center__div {
+background-color: white;
+padding: 10px 20px;
+border-radius: 20px;
+}
+
+.follow__page img {
+height: 50px;
+width: 50px;
+}
+
+.follow__page__para a {
+text-decoration: none;
+color: black;
+text-align: center;
+padding-left: 15px;
+padding-right: 30px;
+}
+
+.follow__page:hover {
+right: -20px;
+}
+
+</style>
+</head>
+<body>
+<div id="main__div">
+<div class="center__div">
+<h1>Hello <span id="nameString"></span>, <span id="greeting"></span></h1>
+</div>
+<div class="follow__page">
+<img src="https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c521.png" alt="Instagram Logo" />
+<p class="follow__page__para"><a href="https://instagram.com/the.agrim.singh/" target="_instagram">Follow Me On Instagram</a></p>
+</div>
+</body>
+<script>
+const nameString = document.getElementById("nameString");
+const changeBack = document.getElementById("main__div");
+const greeting = document.getElementById("greeting");
+
+var nameVar = prompt("Please Enter Your Name");
+nameString.innerHTML = nameVar;
+
+const date = new Date();
+
+let hours = date.getHours();
+
+if (hours >= 1 && hours < 12) {
+    greeting.innerHTML = "Good Morning";
+    changeBack.style.backgroundColor = "green";
+} else if (hours >= 12 && hours < 16) {
+    greeting.innerHTML = "Good Afternoon";
+    changeBack.style.backgroundColor = "gold"
+} else {
+    greeting.innerHTML = "Good evening";
+    changeBack.style.backgroundColor = "orange";
+}
+</script>
+</html>
